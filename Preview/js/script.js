@@ -1,70 +1,36 @@
   "use strict";
 
-/* Задание на урок:
+  let num = 20;
 
-1) Автоматизировать вопросы пользователю про фильмы при помощи цикла
+function showFirstMessage(text) {
+    console.log(text);
+    console.log(num);
+}
 
-2) Сделать так, чтобы пользователь не мог оставить ответ в виде пустой строки,
-отменить ответ или ввести название фильма длинее, чем 50 символов. Если это происходит - 
-возвращаем пользователя к вопросам опять
+showFirstMessage("Hello world");
+console.log(num);
+/*
+function calc(a, b) {
+    return (a + b);
 
-3) При помощи условий проверить  personalMovieDB.count, и если он меньше 10 - вывести сообщение
-"Просмотрено довольно мало фильмов", если от 10 до 30 - "Вы классический зритель", а если больше - 
-"Вы киноман". А если не подошло ни к одному варианту - "Произошла ошибка"
+}
 
-4) Потренироваться и переписать цикл еще двумя способами*/
+console.log(calc(4, 3));
+console.log(calc(5, 6));
+console.log(calc(10, 6)); */
 
-// Код возьмите из предыдущего домашнего задания
+function ret() {
+    let num = 50;
+    return num;
+}
 
-const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели', '');
+const anotherNum = ret();
+console.log(anotherNum);
 
-const personalMovieDB = {
-  count: numberOfFilms, 
-  movies: {},
-  actors: {},
-  genres: [],
-  privat: false
+const logger = function() {
+    console.log("HELLO");
 };
 
+logger();
 
-for (let i = 0; i < 1; i++) {
-    const a = prompt('Один из последних просмотренныз фильмов?', ''),
-          b = prompt('На сколько оцените егo?', '');
-
-    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-        personalMovieDB.movies[a] = b;
-        console.log('done');
-    } else {
-        console.log('error');
-        i--;
-    }
-    for (let i = 0; i < 1; i++) {
-        const c = prompt('Какого актера ты любишь больше всего?', ''),
-              d = prompt('Сколько хуев он сосал?', '');
-
-    if (c != null && b != null && a != '' && b != '' && c.length < 10) {
-        personalMovieDB.actors[c] = d;
-        console.log('done')
-    } else {
-        console.log('error');
-        i--;
-    }
-
-    if (personalMovieDB.count < 10) {
-        console.log('Просмотрено довольно мало фильмов');
-    } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-        console.log('Вы классический зритель');
-    } else if (personalMovieDB.count >= 30) {
-        console.log('Вы киноман');
-    } else {
-        console.log('Error');
-    }
-
-    
-}
-
-
-      
-}
-
-console.log(personalMovieDB);
+const calc = (a, b) => { return a + b };
